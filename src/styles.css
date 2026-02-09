@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Libre+Baskerville:wght@400;700&display=swap');
+
+:root {
+  --rose: #b73b73;
+  --rose-dark: #7a1f4b;
+  --cream: #fff8ee;
+  --royal: #1b2a5a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Libre Baskerville', serif;
+  background: #150f2f;
+  color: #fff;
+}
+
+.screen {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-screen {
+  background-image: linear-gradient(135deg, rgba(15, 7, 32, 0.45), rgba(76, 14, 46, 0.45)), url('/Image_1.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay-card {
+  background: rgba(255, 248, 238, 0.86);
+  color: #2f1736;
+  border: 2px solid #e6bfd2;
+  border-radius: 24px;
+  padding: 2rem;
+  max-width: 560px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.overlay-card h1,
+.question-panel h2,
+.letter-card h2 {
+  font-family: 'Cinzel', serif;
+  margin-top: 0;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn.royal,
+.btn.yes {
+  color: #fff;
+  background: linear-gradient(135deg, var(--rose), var(--rose-dark));
+  box-shadow: 0 6px 20px rgba(141, 20, 82, 0.35);
+}
+
+.question-screen {
+  background-image: linear-gradient(160deg, rgba(9, 8, 28, 0.45), rgba(15, 6, 40, 0.45)), url('/Sky.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.question-panel {
+  width: min(760px, 100%);
+  min-height: 440px;
+  border-radius: 24px;
+  padding: 2rem;
+  position: relative;
+  background: rgba(13, 13, 41, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.subtitle {
+  color: #f9dcff;
+}
+
+.actions {
+  margin-top: 2rem;
+  min-height: 220px;
+  position: relative;
+}
+
+.btn.no {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: #f3d2e4;
+  color: #490f2e;
+}
+
+.warning {
+  margin-top: 0.8rem;
+  color: #ffe79d;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.letter-screen {
+  background: radial-gradient(circle at top, #3b1f58, #1a102f 55%, #120a22);
+  color: var(--cream);
+}
+
+.letter-card {
+  width: min(900px, 100%);
+  background: rgba(255, 248, 238, 0.9);
+  color: #351730;
+  border-radius: 20px;
+  border: 3px double #d79ab5;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  padding: clamp(1.2rem, 2vw, 2rem);
+  z-index: 2;
+}
+
+.letter-card h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.6rem;
+  color: #841d56;
+}
+
+.letter-card pre {
+  white-space: pre-wrap;
+  font-family: inherit;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.butterfly-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.butterfly {
+  position: absolute;
+  top: 110%;
+  opacity: 0.8;
+  animation-name: flutter;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.45));
+}
+
+@keyframes flutter {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  30% {
+    transform: translate3d(26px, -35vh, 0) rotate(8deg);
+  }
+  60% {
+    transform: translate3d(-26px, -70vh, 0) rotate(-8deg);
+  }
+  100% {
+    transform: translate3d(16px, -120vh, 0) rotate(6deg);
+  }
+}
+
+.decor {
+  position: absolute;
+  z-index: 1;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  opacity: 0.9;
+}
+
+.decor-left {
+  left: 1rem;
+  top: 1rem;
+}
+
+.decor-right {
+  right: 1rem;
+  bottom: 1rem;
+}
